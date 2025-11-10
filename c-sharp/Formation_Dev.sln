@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.14.36623.8
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorld", "c-sharp\sem01\j01\HelloWorld\HelloWorld.csproj", "{05492869-6DF9-4155-9A49-EAA766D4926E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorld", "sem01\j01\HelloWorld\HelloWorld.csproj", "{05492869-6DF9-4155-9A49-EAA766D4926E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "c-sharp", "c-sharp", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
 EndProject
@@ -11,21 +11,21 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sem01", "sem01", "{844C25E7
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "j01", "j01", "{521F2410-A0B2-476F-A2BF-E8663982E0B9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestConnexionSQL", "c-sharp\sem01\j01\TestConnexionSQL\TestConnexionSQL.csproj", "{AB9A4F49-256A-444B-BFE5-46A549BD5CFE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestConnexionSQL", "sem01\j01\TestConnexionSQL\TestConnexionSQL.csproj", "{AB9A4F49-256A-444B-BFE5-46A549BD5CFE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "j02", "j02", "{EA46640A-9F56-4A65-961C-DFF0F97D294B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pair-Impair", "c-sharp\sem01\j02\Pair-Impair\Pair-Impair.csproj", "{A5506368-1BF9-41F8-9C7E-F013A9DA7D2E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pair-Impair", "sem01\j02\Pair-Impair\Pair-Impair.csproj", "{A5506368-1BF9-41F8-9C7E-F013A9DA7D2E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlusGrand", "c-sharp\sem01\j02\PlusGrand\PlusGrand.csproj", "{5246936C-1759-4765-B0E5-419FFDAF3C21}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlusGrand", "sem01\j02\PlusGrand\PlusGrand.csproj", "{5246936C-1759-4765-B0E5-419FFDAF3C21}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moyenne", "c-sharp\sem01\j02\Moyenne\Moyenne.csproj", "{56ED6799-E3BC-4F30-846E-64A21C73D9A3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moyenne", "sem01\j02\Moyenne\Moyenne.csproj", "{56ED6799-E3BC-4F30-846E-64A21C73D9A3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moyenne_v2", "c-sharp\sem01\j02\Moyenne_v2\Moyenne_v2.csproj", "{4E27056B-AB9C-411C-9F49-A54002E6B98E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moyenne_v2", "sem01\j02\Moyenne_v2\Moyenne_v2.csproj", "{4E27056B-AB9C-411C-9F49-A54002E6B98E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fonctions", "c-sharp\sem01\j02\Fonctions\Fonctions.csproj", "{B1BD1B21-D9C4-4262-A5E3-ABD39755101B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fonctions", "sem01\j02\Fonctions\Fonctions.csproj", "{B1BD1B21-D9C4-4262-A5E3-ABD39755101B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intégration", "c-sharp\sem01\j02\Intégration\Intégration.csproj", "{99076937-8ED0-4BCB-9CAA-C030D32349B9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intégration", "sem01\j02\Intégration\Intégration.csproj", "{99076937-8ED0-4BCB-9CAA-C030D32349B9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
