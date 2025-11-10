@@ -6,7 +6,7 @@ class Program
 {
     static void Main()
     {
-        string connectionString = "Server=THINK-PC\\TEW_SQLEXPRESS;Database=master;Trusted_Connection=True;TrustServerCertificate=True;";
+        string connectionString = "Server=localhost;Database=master;Trusted_Connection=True;TrustServerCertificate=True;";
 
         using (SqlConnection conn = new SqlConnection(connectionString))
         {
