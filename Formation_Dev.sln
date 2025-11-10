@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moyenne_v2", "c-sharp\sem01
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fonctions", "c-sharp\sem01\j02\Fonctions\Fonctions.csproj", "{B1BD1B21-D9C4-4262-A5E3-ABD39755101B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intégration", "c-sharp\sem01\j02\Intégration\Intégration.csproj", "{99076937-8ED0-4BCB-9CAA-C030D32349B9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,6 +61,10 @@ Global
 		{B1BD1B21-D9C4-4262-A5E3-ABD39755101B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B1BD1B21-D9C4-4262-A5E3-ABD39755101B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B1BD1B21-D9C4-4262-A5E3-ABD39755101B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99076937-8ED0-4BCB-9CAA-C030D32349B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99076937-8ED0-4BCB-9CAA-C030D32349B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99076937-8ED0-4BCB-9CAA-C030D32349B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99076937-8ED0-4BCB-9CAA-C030D32349B9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -74,6 +80,7 @@ Global
 		{56ED6799-E3BC-4F30-846E-64A21C73D9A3} = {EA46640A-9F56-4A65-961C-DFF0F97D294B}
 		{4E27056B-AB9C-411C-9F49-A54002E6B98E} = {EA46640A-9F56-4A65-961C-DFF0F97D294B}
 		{B1BD1B21-D9C4-4262-A5E3-ABD39755101B} = {EA46640A-9F56-4A65-961C-DFF0F97D294B}
+		{99076937-8ED0-4BCB-9CAA-C030D32349B9} = {EA46640A-9F56-4A65-961C-DFF0F97D294B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2AA59419-5D72-4873-AE9F-BCAFB1BA35AE}
