@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pair-Impair", "c-sharp\sem0
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlusGrand", "c-sharp\sem01\j02\PlusGrand\PlusGrand.csproj", "{5246936C-1759-4765-B0E5-419FFDAF3C21}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moyenne", "c-sharp\sem01\j02\Moyenne\Moyenne.csproj", "{56ED6799-E3BC-4F30-846E-64A21C73D9A3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +43,10 @@ Global
 		{5246936C-1759-4765-B0E5-419FFDAF3C21}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5246936C-1759-4765-B0E5-419FFDAF3C21}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5246936C-1759-4765-B0E5-419FFDAF3C21}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56ED6799-E3BC-4F30-846E-64A21C73D9A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56ED6799-E3BC-4F30-846E-64A21C73D9A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56ED6799-E3BC-4F30-846E-64A21C73D9A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56ED6799-E3BC-4F30-846E-64A21C73D9A3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -53,6 +59,7 @@ Global
 		{EA46640A-9F56-4A65-961C-DFF0F97D294B} = {844C25E7-AA2D-4326-8246-8E944F847EDF}
 		{A5506368-1BF9-41F8-9C7E-F013A9DA7D2E} = {EA46640A-9F56-4A65-961C-DFF0F97D294B}
 		{5246936C-1759-4765-B0E5-419FFDAF3C21} = {EA46640A-9F56-4A65-961C-DFF0F97D294B}
+		{56ED6799-E3BC-4F30-846E-64A21C73D9A3} = {EA46640A-9F56-4A65-961C-DFF0F97D294B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2AA59419-5D72-4873-AE9F-BCAFB1BA35AE}
