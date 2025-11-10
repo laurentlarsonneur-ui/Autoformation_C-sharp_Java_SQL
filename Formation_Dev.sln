@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36623.8
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorld", "c-sharp\sem01\j01\HelloWorld\HelloWorld.csproj", "{05492869-6DF9-4155-9A49-EAA766D4926E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "c-sharp", "c-sharp", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sem01", "sem01", "{844C25E7-AA2D-4326-8246-8E944F847EDF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "j01", "j01", "{521F2410-A0B2-476F-A2BF-E8663982E0B9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{05492869-6DF9-4155-9A49-EAA766D4926E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05492869-6DF9-4155-9A49-EAA766D4926E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05492869-6DF9-4155-9A49-EAA766D4926E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05492869-6DF9-4155-9A49-EAA766D4926E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{05492869-6DF9-4155-9A49-EAA766D4926E} = {521F2410-A0B2-476F-A2BF-E8663982E0B9}
+		{844C25E7-AA2D-4326-8246-8E944F847EDF} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{521F2410-A0B2-476F-A2BF-E8663982E0B9} = {844C25E7-AA2D-4326-8246-8E944F847EDF}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2AA59419-5D72-4873-AE9F-BCAFB1BA35AE}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,12 @@
+# Visual Studio
+bin/
+obj/
+.vs/
+
+# IntelliJ
+.idea/
+out/
+
+# Autres
+*.class
+*.log
