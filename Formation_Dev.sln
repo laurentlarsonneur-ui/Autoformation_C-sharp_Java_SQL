@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moyenne", "c-sharp\sem01\j0
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moyenne_v2", "c-sharp\sem01\j02\Moyenne_v2\Moyenne_v2.csproj", "{4E27056B-AB9C-411C-9F49-A54002E6B98E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fonctions", "c-sharp\sem01\j02\Fonctions\Fonctions.csproj", "{B1BD1B21-D9C4-4262-A5E3-ABD39755101B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,6 +55,10 @@ Global
 		{4E27056B-AB9C-411C-9F49-A54002E6B98E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4E27056B-AB9C-411C-9F49-A54002E6B98E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4E27056B-AB9C-411C-9F49-A54002E6B98E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1BD1B21-D9C4-4262-A5E3-ABD39755101B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1BD1B21-D9C4-4262-A5E3-ABD39755101B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1BD1B21-D9C4-4262-A5E3-ABD39755101B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1BD1B21-D9C4-4262-A5E3-ABD39755101B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -67,6 +73,7 @@ Global
 		{5246936C-1759-4765-B0E5-419FFDAF3C21} = {EA46640A-9F56-4A65-961C-DFF0F97D294B}
 		{56ED6799-E3BC-4F30-846E-64A21C73D9A3} = {EA46640A-9F56-4A65-961C-DFF0F97D294B}
 		{4E27056B-AB9C-411C-9F49-A54002E6B98E} = {EA46640A-9F56-4A65-961C-DFF0F97D294B}
+		{B1BD1B21-D9C4-4262-A5E3-ABD39755101B} = {EA46640A-9F56-4A65-961C-DFF0F97D294B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2AA59419-5D72-4873-AE9F-BCAFB1BA35AE}
