@@ -1,12 +1,38 @@
-# Visual Studio
-bin/
-obj/
+# =========================
+# GÉNÉRAL
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# VISUAL STUDIO / C#
+# =========================
 .vs/
+[Bb]in/
+[Oo]bj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
 
-# IntelliJ
+# =========================
+# INTELLIJ / JAVA
+# =========================
 .idea/
+*.iml
 out/
-
-# Autres
 *.class
+
+# =========================
+# BUILD & LOGS
+# =========================
 *.log
+*.tmp
+*.bak
+*.swp
+
+# =========================
+# AUTRES (si besoin)
+# =========================
+# node_modules/      # en cas de JS plus tard
+# dist/
