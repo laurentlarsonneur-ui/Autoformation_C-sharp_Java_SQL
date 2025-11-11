@@ -7,7 +7,7 @@ Mes projets d’autoformation en développement
   Simple "Hello World!" en C#
 * `TestConnexionSQL`
   Test de la connection de C# à un serveur SQL local
-  
+
 **j01 - Jour 2**
 * `Pair-Impair`
   Saisie d'un nombre, détermine s'il est pair ou impair
@@ -21,14 +21,14 @@ Mes projets d’autoformation en développement
   Exemple de fonctions+fonction qui calcule la moyenne d'un tableau
 * `Intégration`
   Saisie et statistiques sur un tableau + tri à bulles + gestion des erreurs de saisie
-  
+
 ## java
 **j01 - Jour 1**
 * `HelloJava`
   Simple "Hello World!" en Java
 * `JavaDBconnection`
   Test de la connection de Java à un serveur SQL local
-  
+
 **j01 - Jour 2**
 * `Pair-Impair`
   Saisie d'un nombre, détermine s'il est pair ou impair
@@ -42,5 +42,7 @@ Mes projets d’autoformation en développement
   Exemple de fonctions en Java
 * `FonctionsNew`
   Fonction qui calcule la moyenne d'un tableau
-  
-  
+* `Integration`
+  Saisie et statistiques sur un tableau + tri à bulles + gestion des erreurs de saisie
+
+
