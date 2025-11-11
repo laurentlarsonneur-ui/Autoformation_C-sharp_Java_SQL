@@ -7,6 +7,7 @@ Mes projets d’autoformation en développement
   Simple "Hello World!" en Java
 * JavaDBconnection
   Test de la connection de Java à un serveur SQL local
+  
 **j01 - Jour 2**
 * Pair-Impair
   Saisie d'un nombre, détermine s'il est pair ou impair
