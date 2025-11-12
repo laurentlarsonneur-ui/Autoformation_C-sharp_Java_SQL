@@ -49,4 +49,8 @@ Mes projets d’autoformation en développement
 * `Integration`
   Saisie et statistiques sur un tableau + tri à bulles + gestion des erreurs de saisie
 
+**Jour 03**
+* `Bases-POO`
+  Révision des concepts de Programmation Orientée Objet (POO)
+
 
