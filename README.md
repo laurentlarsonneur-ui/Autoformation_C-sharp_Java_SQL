@@ -2,13 +2,13 @@
 Mes projets d’autoformation en développement
 
 ## c-sharp
-**j01 - Jour 1**
+**Jour 01**
 * `HelloWorld`
   Simple "Hello World!" en C#
 * `TestConnexionSQL`
   Test de la connection de C# à un serveur SQL local
 
-**j01 - Jour 2**
+**Jour 02**
 * `Pair-Impair`
   Saisie d'un nombre, détermine s'il est pair ou impair
 * `PlusGrand`
@@ -22,14 +22,18 @@ Mes projets d’autoformation en développement
 * `Intégration`
   Saisie et statistiques sur un tableau + tri à bulles + gestion des erreurs de saisie
 
+**Jour 03**
+* `BasesPOO`
+  Révision des concepts de Programmation Orientée Objet (POO)
+
 ## java
-**j01 - Jour 1**
+**Jour 01**
 * `HelloJava`
   Simple "Hello World!" en Java
 * `JavaDBconnection`
   Test de la connection de Java à un serveur SQL local
 
-**j01 - Jour 2**
+**Jour 02**
 * `Pair-Impair`
   Saisie d'un nombre, détermine s'il est pair ou impair
 * `PlusGrand`
