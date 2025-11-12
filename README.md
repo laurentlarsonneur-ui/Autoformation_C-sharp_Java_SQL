@@ -24,7 +24,9 @@ Mes projets d’autoformation en développement
 
 **Jour 03**
 * `BasesPOO`
-  Révision des concepts de Programmation Orientée Objet (POO)
+  Concepts de Programmation Orientée Objet (POO) : déclaration de classe et constructeur, encapsulation, instanciation
+* `Heritage`
+  Concepts d'héritage, de surcharge et de polymorphisme
 
 ## java
 **Jour 01**
@@ -51,6 +53,8 @@ Mes projets d’autoformation en développement
 
 **Jour 03**
 * `Bases-POO`
-  Révision des concepts de Programmation Orientée Objet (POO)
+  Concepts de Programmation Orientée Objet (POO) : déclaration de classe et constructeur, encapsulation, instanciation
+* `Heritage`
+  Concepts d'héritage, de surcharge et de polymorphisme
 
 
