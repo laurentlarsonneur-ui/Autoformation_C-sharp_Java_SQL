@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasesPOO", "sem01\j03\Bases
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Heritage", "sem01\j03\Heritage\Heritage.csproj", "{A2082259-6C82-4AAE-8686-A41610C9FDAE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Projet-POO", "sem01\j03\Projet-POO\Projet-POO.csproj", "{BD9B205F-2333-4721-B1A0-27E751E6E201}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -79,6 +81,10 @@ Global
 		{A2082259-6C82-4AAE-8686-A41610C9FDAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A2082259-6C82-4AAE-8686-A41610C9FDAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A2082259-6C82-4AAE-8686-A41610C9FDAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD9B205F-2333-4721-B1A0-27E751E6E201}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD9B205F-2333-4721-B1A0-27E751E6E201}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD9B205F-2333-4721-B1A0-27E751E6E201}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD9B205F-2333-4721-B1A0-27E751E6E201}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -98,6 +104,7 @@ Global
 		{671E0815-2794-4290-BCF1-4A2E92640914} = {844C25E7-AA2D-4326-8246-8E944F847EDF}
 		{5AB07454-5246-4449-923F-CACBBAD81692} = {671E0815-2794-4290-BCF1-4A2E92640914}
 		{A2082259-6C82-4AAE-8686-A41610C9FDAE} = {671E0815-2794-4290-BCF1-4A2E92640914}
+		{BD9B205F-2333-4721-B1A0-27E751E6E201} = {671E0815-2794-4290-BCF1-4A2E92640914}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2AA59419-5D72-4873-AE9F-BCAFB1BA35AE}
