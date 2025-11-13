@@ -27,6 +27,8 @@ Mes projets d’autoformation en développement
   Concepts de Programmation Orientée Objet (POO) : déclaration de classe et constructeur, encapsulation, instanciation
 * `Heritage`
   Concepts d'héritage, de surcharge et de polymorphisme
+* `Projet-POO`
+  Mini-projet : gestion de formes géométriques
 
 ## java
 **Jour 01**
@@ -56,5 +58,7 @@ Mes projets d’autoformation en développement
   Concepts de Programmation Orientée Objet (POO) : déclaration de classe et constructeur, encapsulation, instanciation
 * `Heritage`
   Concepts d'héritage, de surcharge et de polymorphisme
+* `ProjetPOO`
+  Mini-projet : gestion de formes géométriques
 
 
