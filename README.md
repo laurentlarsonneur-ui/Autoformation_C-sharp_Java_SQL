@@ -30,6 +30,10 @@ Mes projets d’autoformation en développement
 * `Projet-POO`
   Mini-projet : gestion de formes géométriques
 
+**Jour 04**
+* `Calculatrice`
+  Mini-projet : calculatrice
+
 ## java
 **Jour 01**
 * `HelloJava`
@@ -61,4 +65,6 @@ Mes projets d’autoformation en développement
 * `ProjetPOO`
   Mini-projet : gestion de formes géométriques
 
-
+**Jour 04**
+* `Calculatrice`
+  Mini-projet : calculatrice
