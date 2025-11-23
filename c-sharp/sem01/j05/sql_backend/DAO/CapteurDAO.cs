@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-// DAO = Data Access Object
+// Un DAO (Data Access Object) est une classe spécialisée dans l'accès aux données
 // Gère la communication avec SQL Server (CRUD).
 // CRUD = Create (créer), Read (lire), Update (mettre à jour) et Delete (supprimer)
 
@@ -20,26 +20,18 @@ namespace sql_backend.DAO
             _connectionString = connectionString;
         }
 
-        public void Create()
+        public void Insert(Capteur c)
         {
-            Capteur cap = new Capteur();
-            cap.Id = 0;
-            Console.WriteLine("Enter name:");
-            cap.Nom = Console.ReadLine();
-            Console.WriteLine("Enter type:");
-            cap.Type = Console.ReadLine();
-            Console.WriteLine("Enter unit:");
-            cap.Unite = Console.ReadLine();
-
             using (SqlConnection conn = new SqlConnection(_connectionString))
             {
                 conn.Open();
-                string sql = "INSERT INTO Capteurs (nom, type, unite) VALUES ('"+ cap.Nom.Replace("\'", "\'\'") + "', '"+ cap.Type.Replace("\'", "\'\'") + "', '"+ cap.Unite.Replace("\'", "\'\'") + "')";
+                string sql = "INSERT INTO Capteurs (nom, type, unite) VALUES ('" + c.Nom.Replace("\'", "\'\'") + "', '" + c.Type.Replace("\'", "\'\'") + "', '" + c.Unite.Replace("\'", "\'\'") + "')";
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 cmd.ExecuteNonQuery();
                 Console.WriteLine("Connexion OK - SQL entry created");
             }
         }
+
         public List<Capteur> FindAll()
         {
             List<Capteur> mes_cap = new List<Capteur>(); // Liste vide de capteurs
@@ -84,52 +76,27 @@ namespace sql_backend.DAO
             }
             return cap;
         }
-        public void Update()
+        public void Update(Capteur c)
         {
-            Console.WriteLine("Which Id should be modified?");
-            int MonId = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Searched index:"+MonId);
-            Capteur cap = findById(MonId);
-            cap.display();
-
-            Console.WriteLine("Enter name (hit enter to keep existing):");
-            string s = Console.ReadLine();
-            if (s != "") cap.Nom = s;
-            Console.WriteLine("Enter type (hit enter to keep existing):");
-            s = Console.ReadLine();
-            if (s != "") cap.Type = s;
-            Console.WriteLine("Enter unit (hit enter to keep existing):");
-            s = Console.ReadLine();
-            if (s != "") cap.Unite = s;
-
-            cap.display();
             using (SqlConnection conn = new SqlConnection(_connectionString))
             {
                 conn.Open();
-                string sql = "UPDATE Capteurs SET nom = '" + cap.Nom.Replace("\'", "\'\'") 
-                    + "', type = '" + cap.Type.Replace("\'", "\'\'") 
-                    + "', unite = '" + cap.Unite.Replace("\'", "\'\'") 
-                    + "'  WHERE id = " + cap.Id ;
+                string sql = "UPDATE Capteurs SET nom = '" + c.Nom.Replace("\'", "\'\'") 
+                    + "', type = '" + c.Type.Replace("\'", "\'\'") 
+                    + "', unite = '" + c.Unite.Replace("\'", "\'\'") 
+                    + "'  WHERE id = " + c.Id ;
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 cmd.ExecuteNonQuery();
                 Console.WriteLine("Connexion OK - SQL entry modified");
             }
         }
-        public void Delete()
+        public void Delete(int id)
         {
-            Console.WriteLine("Which Id should be deleted?");
-            int MonId = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Searched index:" + MonId);
-            Capteur cap = findById(MonId);
-            cap.display();
-
-            Console.WriteLine("Confirm deletion (y/n):");
-            string s = Console.ReadLine();
-            if (s == "y") {
+            {
                 using (SqlConnection conn = new SqlConnection(_connectionString))
                 {
                     conn.Open();
-                    string sql = "DELETE FROM Capteurs WHERE id = " + cap.Id;
+                    string sql = "DELETE FROM Capteurs WHERE id = " + id;
                     SqlCommand cmd = new SqlCommand(sql, conn);
                     cmd.ExecuteNonQuery();
                     Console.WriteLine("Connexion OK - SQL entry deleted");
