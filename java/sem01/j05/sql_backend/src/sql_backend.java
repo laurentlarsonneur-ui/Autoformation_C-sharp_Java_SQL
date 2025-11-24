@@ -4,9 +4,10 @@
 // Structure du code
 // Program / UI  →  Services  →  DAO  →  SQL Server
 
+import dao.CapteurDAO;
+import dao.CapteurDAO.*;
 import java.util.Scanner;
 import model.Capteur;
-import dao.CapteurDAO;
 
 public class sql_backend {
     private static char menu(Scanner scanner) {
@@ -20,38 +21,39 @@ public class sql_backend {
     }
 
     private static void Create(Scanner scanner) {
-        Capteur cap = new Capteur();
-        cap.setId(0);
-        System.out.println("Enter name:");
-        cap.setNom(scanner.nextLine());
-        System.out.println("Enter type:");
-        cap.setType(scanner.nextLine());
-        System.out.println("Enter unit:");
-        cap.setUnite(scanner.nextLine());
-        //dao.Insert(cap);
-    }
+            Capteur cap = new Capteur();
+            cap.setId(0);
+            System.out.println("Enter name:");
+            cap.setNom(scanner.nextLine());
+            System.out.println("Enter type:");
+            cap.setType(scanner.nextLine());
+            System.out.println("Enter unit:");
+            cap.setUnite(scanner.nextLine());
+            var mondao = new CapteurDAO("toto");
+            mondao.Insert(cap);
+        }
 
-/*    private static public void Change(Scanner scanner) {
-        System.out.println("Which Id should be modified?");
-        int MonId = Convert.ToInt32(scanner.nextLine());
-        System.out.println("Searched index:" + MonId);
-        //Capteur cap = dao.findById(MonId);
-        cap.display();
+    /*    private static public void Change(Scanner scanner) {
+            System.out.println("Which Id should be modified?");
+            int MonId = Convert.ToInt32(scanner.nextLine());
+            System.out.println("Searched index:" + MonId);
+            //Capteur cap = dao.findById(MonId);
+            cap.display();
 
-        System.out.println("Enter name (hit enter to keep existing):");
-        string s = scanner.nextLine();
-        if (s != '') cap.nom = s;
-        System.out.println("Enter type (hit enter to keep existing):");
-        s = scanner.nextLine();
-        if (s != '') cap.type = s;
-        System.out.println("Enter unit (hit enter to keep existing):");
-        s = scanner.nextLine();
-        if (s != '') cap.unite = s;
+            System.out.println("Enter name (hit enter to keep existing):");
+            string s = scanner.nextLine();
+            if (s != '') cap.nom = s;
+            System.out.println("Enter type (hit enter to keep existing):");
+            s = scanner.nextLine();
+            if (s != '') cap.type = s;
+            System.out.println("Enter unit (hit enter to keep existing):");
+            s = scanner.nextLine();
+            if (s != '') cap.unite = s;
 
-        cap.display();
-        //dao.Update(cap);
-    }
-*/
+            cap.display();
+            //dao.Update(cap);
+        }
+
     private static void Eliminate(Scanner scanner) {
         System.out.println("Which Id should be deleted?");
         int monId = Integer.parseInt(scanner.nextLine());
@@ -63,7 +65,7 @@ public class sql_backend {
         String s = scanner.nextLine();
         //if (s == 'y') dao.Delete(MonId);
     }
-
+   */
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         char choix;
@@ -83,7 +85,7 @@ public class sql_backend {
                     //Change();
                     break;
                 case 'd':
-                    Eliminate(sc);
+                    //Eliminate(sc);
                     break;
                 case 'q':
                     System.out.println("End of program");
