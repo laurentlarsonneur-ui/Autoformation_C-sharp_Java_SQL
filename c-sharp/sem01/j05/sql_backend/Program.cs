@@ -8,7 +8,7 @@ using System;
 
 class Program
 {
-    static string connectionString = "Server=localhost;Database=SupervisionDB;encrypt=false;trustServerCertificate=true;user=sa;password=gyuezo+fk5;";
+    static string connectionString = "Server=localhost,1440;Database=SupervisionDB;encrypt=false;trustServerCertificate=true;user=sa;password=gyuezo+fk5;";
     static CapteurDAO dao = new CapteurDAO(connectionString);
     static string Menu()
     {
