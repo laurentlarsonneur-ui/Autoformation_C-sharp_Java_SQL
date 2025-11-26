@@ -4,9 +4,7 @@
 // Structure du code
 // Program / UI  →  Services  →  DAO  →  SQL Server
 import java.util.Scanner;
-import java.sql.*;
 import dao.CapteurDAO;
-import dao.CapteurDAO.*;
 import model.Capteur;
 
 public class sql_backend {
@@ -20,7 +18,7 @@ public class sql_backend {
         return (scanner.nextLine().charAt(0));
     }
 
-    private static void Create(Scanner scanner, var dao_prm) {
+    private static void Create(Scanner scanner, CapteurDAO dao_prm) {
             Capteur cap = new Capteur();
             cap.setId(0);
             System.out.println("Enter name:");
@@ -68,7 +66,7 @@ public class sql_backend {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        String cs = "jdbc:sqlserver://localhost:14330;" + "databaseName=SupervisionDB;"
+        String cs = "jdbc:sqlserver://localhost:1440;" + "databaseName=SupervisionDB;"
             + "encrypt=false;" + "TrustServerCertificate=true;"
             + "user=sa;" + "password=gyuezo+fk5;";
 
@@ -83,8 +81,8 @@ public class sql_backend {
                     Create(sc,dao);
                     break;
                 case 'r':
-                    //var liste = dao.FindAll();
-                    //foreach (Capteur cap in liste) cap.display();
+                    var liste = dao.FindAll();
+                    liste.forEach(cap -> cap.display());
                     break;
                 case 'u':
                     //Change();
@@ -101,16 +99,5 @@ public class sql_backend {
             }
             System.out.println(choix);
         } while (choix != 'q');
-        try (Connection conn = DriverManager.getConnection(url, "sa", "gyuezo+fk5")) {
-            System.out.println("Connexion OK");
-        } catch (SQLException e) {
-            System.err.println("❌ Erreur de connexion : " + e.getMessage());
-        }
-//            String sql = "INSERT INTO Capteurs (nom, type, unite) VALUES (?, ?, ?)";
-//            PreparedStatement ps = conn.prepareStatement(sql);
-//            ps.setString(1, "Capteur Java");
-//            ps.setString(2, "Pression");
-//            ps.setString(3, "Pa");
-//            ps.executeUpdate();
     }
 }

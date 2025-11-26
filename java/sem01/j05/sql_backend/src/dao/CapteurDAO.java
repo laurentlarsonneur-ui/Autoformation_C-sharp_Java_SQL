@@ -4,52 +4,64 @@
 
 package dao;
 import model.Capteur;
+import java.sql.*;
+import java.util.LinkedList;
 
 public class CapteurDAO {
-    private String _connectionString;
+    private final String _connectionString;
 
     public CapteurDAO(String connectionString) {
         _connectionString = connectionString;
     }
 
     public void Insert(Capteur c) {
-        c.display();
+        try (Connection conn = DriverManager.getConnection(_connectionString)) {
+            System.out.println("Connexion OK");
+            String sql = "INSERT INTO Capteurs (nom, type, unite) VALUES (?, ?, ?)";
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setString(1, c.getNom());
+            ps.setString(2, c.getType());
+            ps.setString(3, c.getUnite());
+            ps.executeUpdate();
+            System.out.println("Connexion OK - SQL entry created");
+        } catch (SQLException e) {
+            System.out.println("SQL Error");
+        }
+    }
 
-//                using (SqlConnection conn = new SqlConnection(_connectionString)) {
-//                    conn.Open();
-//                    String sql = "INSERT INTO Capteurs (nom, type, unite) VALUES ('" + c.Nom.Replace("\'", "\'\'") + "', '" + c.Type.Replace("\'", "\'\'") + "', '" + c.Unite.Replace("\'", "\'\'") + "')";
-//                    SqlCommand cmd = new SqlCommand(sql, conn);
-//                    cmd.ExecuteNonQuery();
-//                    System.out.println("Connexion OK - SQL entry created");
-//                }
+    public LinkedList<Capteur> FindAll() {
+        LinkedList<Capteur> mesCap = new LinkedList<>(); // Liste vide de capteurs
+        Connection conn = null;
+        Statement stmt = null;
+        ResultSet rs = null;
+        try {
+            // Établir la connexion
+            conn = DriverManager.getConnection(_connectionString);
+            System.out.println("Connexion OK");
+
+            // Créer une requête
+            stmt = conn.createStatement();
+            String sql = "SELECT id, nom, type, unite FROM Capteurs";
+
+            // Exécuter la requête
+            rs = stmt.executeQuery(sql);
+
+            // Lire les résultats
+            while (rs.next()) {
+                Capteur cap = new Capteur();
+                cap.setId(rs.getInt("id"));
+                cap.setNom(rs.getString("nom"));
+                cap.setType(rs.getString("type"));
+                cap.setUnite(rs.getString("unite"));
+                mesCap.addLast(cap);
+            }
+        } catch (SQLException e) {
+            System.out.println("SQL Error");
+        }
+        System.out.println("Connexion OK - SQL read complete");
+        return mesCap;
     }
 }
-
-//
-//            public List<Capteur> FindAll()
-//            {
-//                List<Capteur> mes_cap = new List<Capteur>(); // Liste vide de capteurs
-//                using (SqlConnection conn = new SqlConnection(_connectionString))
-//                {
-//                    conn.Open();
-//
-//                    String sql = "SELECT id, nom, type, unite FROM Capteurs";
-//                    SqlCommand cmd = new SqlCommand(sql, conn);
-//                    SqlDataReader reader = cmd.ExecuteReader();
-//
-//                    while (reader.Read())
-//                    {
-//                        Capteur cap = new Capteur();
-//                        cap.Id = Convert.ToInt32(reader["id"]);
-//                        cap.Nom = Convert.ToString(reader["nom"]);
-//                        cap.Type = Convert.ToString(reader["type"]);
-//                        cap.Unite = Convert.ToString(reader["unite"]);
-//                        mes_cap.Add(cap);
-//                    }
-//                }
-//                return mes_cap;
-//            }
-//
 //            public Capteur findById(int id)
 //            {
 //                Capteur cap = new Capteur();
