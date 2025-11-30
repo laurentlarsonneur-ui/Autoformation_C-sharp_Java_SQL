@@ -6,64 +6,57 @@
 import java.util.Scanner;
 import dao.CapteurDAO;
 import model.Capteur;
+import util.ConsoleHelper;
 
 public class sql_backend {
-    private static char menu(Scanner scanner) {
+    private static char menu(ConsoleHelper console) {
         System.out.println("\nChoose one option :");
         System.out.println(" c = Create");
         System.out.println(" r = Read");
         System.out.println(" u = Update");
         System.out.println(" d = Delete");
         System.out.println("\n q = Quit");
-        return (scanner.nextLine().charAt(0));
+        char c = console.lireChoix('C', 'R', 'U', 'D', 'Q');
+        return c;
     }
 
-    private static void Create(Scanner scanner, CapteurDAO dao_prm) {
+    private static void Create(ConsoleHelper console, CapteurDAO dao_prm) {
             Capteur cap = new Capteur();
             cap.setId(0);
-            System.out.println("Enter name:");
-            cap.setNom(scanner.nextLine());
-            System.out.println("Enter type:");
-            cap.setType(scanner.nextLine());
-            System.out.println("Enter unit:");
-            cap.setUnite(scanner.nextLine());
+            cap.setNom(console.lireChaine("Enter name:"));
+            cap.setType(console.lireChaine("Enter type:"));
+            cap.setUnite(console.lireChaine("Enter unit:"));
             dao_prm.Insert(cap);
         }
 
-    /*    private static public void Change(Scanner scanner) {
-            System.out.println("Which Id should be modified?");
-            int MonId = Convert.ToInt32(scanner.nextLine());
-            System.out.println("Searched index:" + MonId);
-            //Capteur cap = dao.findById(MonId);
-            cap.display();
-
-            System.out.println("Enter name (hit enter to keep existing):");
-            string s = scanner.nextLine();
-            if (s != '') cap.nom = s;
-            System.out.println("Enter type (hit enter to keep existing):");
-            s = scanner.nextLine();
-            if (s != '') cap.type = s;
-            System.out.println("Enter unit (hit enter to keep existing):");
-            s = scanner.nextLine();
-            if (s != '') cap.unite = s;
-
-            cap.display();
-            //dao.Update(cap);
+    private static void Change(ConsoleHelper console, CapteurDAO dao_prm) {
+        int MonId = console.lireEntier("Which Id should be modified?");
+        System.out.println("Searched index:" + MonId);
+        Capteur cap = dao_prm.findById(MonId);
+        cap.display();
+        String s = console.lireChaineOptionnelle("Enter name (hit enter to keep existing):");
+        if (!s.isEmpty()) cap.setNom(s);
+        s = console.lireChaineOptionnelle("Enter type (hit enter to keep existing):");
+        if (!s.isEmpty()) cap.setType(s);
+        s = console.lireChaineOptionnelle("Enter unit (hit enter to keep existing):");
+        if (!s.isEmpty()) cap.setUnite(s);
+        cap.display();
+        dao_prm.Update(cap);
+        System.out.println("--- fin de Change ---");
         }
 
-    private static void Eliminate(Scanner scanner) {
-        System.out.println("Which Id should be deleted?");
-        int monId = Integer.parseInt(scanner.nextLine());
-        System.out.println("Searched index:" + monId);
+    private static void Eliminate(ConsoleHelper console, CapteurDAO dao_prm) {
+        int MonId = console.lireEntier("Which Id should be deleted?");
+        System.out.println("Searched index:" + MonId);
         //capteur cap = dao.findById(monId);
         //cap.display();
 
-        System.out.println("Confirm deletion (y/n):");
-        String s = scanner.nextLine();
-        //if (s == 'y') dao.Delete(MonId);
+        Boolean b = console.lireBoolean("Confirm deletion (y/n):");
+        if (b) dao_prm.Delete(MonId);
     }
-   */
+
     public static void main(String[] args) {
+        ConsoleHelper console = new ConsoleHelper();
         Scanner sc = new Scanner(System.in);
 
         String cs = "jdbc:sqlserver://localhost:1440;" + "databaseName=SupervisionDB;"
@@ -75,29 +68,30 @@ public class sql_backend {
 
         System.out.println("*** SQL backend test ***");
         do {
-            choix = menu(sc);
+            choix = menu(console);
             switch (choix) {
-                case 'c':
-                    Create(sc,dao);
+                case 'C': // Create
+                    Create(console, dao);
                     break;
-                case 'r':
+                case 'R': // Read
                     var liste = dao.FindAll();
                     liste.forEach(cap -> cap.display());
                     break;
-                case 'u':
-                    //Change();
+                case 'U': // Update
+                    Change(console, dao);
                     break;
-                case 'd':
-                    //Eliminate(sc);
+                case 'D': // Delete
+                    Eliminate(console, dao);
                     break;
-                case 'q':
+                case 'Q':
                     System.out.println("End of program");
                     break;
                 default:
                     System.out.println("Invalid choice");
+                    System.out.println(choix);
                     break;
             }
-            System.out.println(choix);
-        } while (choix != 'q');
+        } while (choix != 'Q');
+        sc.close();
     }
 }

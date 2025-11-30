@@ -57,59 +57,123 @@ public class CapteurDAO {
             }
         } catch (SQLException e) {
             System.out.println("SQL Error");
+        } finally {
+            // Fermer les ressources
+            try {
+                if (rs != null) rs.close();
+                if (stmt != null) stmt.close();
+                if (conn != null) conn.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
         System.out.println("Connexion OK - SQL read complete");
         return mesCap;
     }
+
+    public Capteur findById(int id) {
+        Capteur cap = new Capteur();
+        Connection conn = null;
+        Statement stmt = null;
+        ResultSet rs = null;
+        try {
+            // Établir la connexion
+            conn = DriverManager.getConnection(_connectionString);
+            System.out.println("Connexion OK");
+
+            // Créer une requête
+            stmt = conn.createStatement();
+            String sql = "SELECT * FROM Capteurs WHERE Id=" + id;
+            System.out.println(sql);
+
+            // Exécuter la requête
+            rs = stmt.executeQuery(sql);
+
+            // Lire les résultats
+            while (rs.next()) {
+                cap.setId(rs.getInt("id"));
+                cap.setNom(rs.getString("nom"));
+                cap.setType(rs.getString("type"));
+                cap.setUnite(rs.getString("unite"));
+            }
+        } catch (SQLException e) {
+            System.out.println("SQL Error");
+            e.printStackTrace();
+        } finally {
+            // Fermer les ressources
+            try {
+                if (rs != null) rs.close();
+                if (stmt != null) stmt.close();
+                if (conn != null) conn.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        System.out.println("Connexion OK - SQL read complete");
+        return cap;
+    }
+
+    public void Update(Capteur c) {
+        Connection conn = null;
+        Statement stmt = null;
+        try {
+            // Établir la connexion
+            conn = DriverManager.getConnection(_connectionString);
+            System.out.println("Connexion OK");
+
+            // Créer une requête
+            stmt = conn.createStatement();
+            String sql = "UPDATE Capteurs SET nom = '" + c.getNom().replace("'", "''")
+                    + "', type = '" + c.getType().replace("'", "''")
+                    + "', unite = '" + c.getUnite().replace("'", "''")
+                    + "'  WHERE id = " + c.getId();
+            System.out.println(sql);
+
+            // Exécuter la requête
+            stmt.executeUpdate(sql);
+        } catch (SQLException e) {
+            System.out.println("SQL Error");
+            e.printStackTrace();
+        } finally {
+            // Fermer les ressources
+            try {
+                if (stmt != null) stmt.close();
+                if (conn != null) conn.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        System.out.println("Connexion OK - SQL entry modified");
+    }
+
+    public void Delete(int id) {
+        Connection conn = null;
+        Statement stmt = null;
+        try {
+            // Établir la connexion
+             conn = DriverManager.getConnection(_connectionString);
+             System.out.println("Connexion OK");
+
+            // Créer une requête
+            stmt = conn.createStatement();
+            String sql = "DELETE FROM Capteurs WHERE id = " + id;
+            System.out.println(sql);
+
+            // Exécuter la requête
+            stmt.executeUpdate(sql);
+            } catch (SQLException e) {
+            System.out.println("SQL Error");
+            e.printStackTrace();
+        } finally {
+            // Fermer les ressources
+            try {
+                if (stmt != null) stmt.close();
+                if (conn != null) conn.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        System.out.println("Connexion OK - SQL entry deleted");
+    }
+
 }
-//            public Capteur findById(int id)
-//            {
-//                Capteur cap = new Capteur();
-//
-//                using (SqlConnection conn = new SqlConnection(_connectionString))
-//                {
-//                    conn.Open();
-//                    String sql = "SELECT * FROM Capteurs WHERE Id="+id;
-//                    SqlCommand cmd = new SqlCommand(sql, conn);
-//                    SqlDataReader reader = cmd.ExecuteReader();
-//
-//                    while (reader.Read())
-//                    {
-//                        cap.Id = Convert.ToInt32(reader["id"]);
-//                        cap.Nom = Convert.ToString(reader["nom"]);
-//                        cap.Type = Convert.ToString(reader["type"]);
-//                        cap.Unite = Convert.ToString(reader["unite"]);
-//                    }
-//                }
-//                return cap;
-//            }
-//
-//            public void Update(Capteur c)
-//            {
-//                using (SqlConnection conn = new SqlConnection(_connectionString))
-//                {
-//                    conn.Open();
-//                    String sql = "UPDATE Capteurs SET nom = '" + c.Nom.Replace("\'", "\'\'")
-//                            + "', type = '" + c.Type.Replace("\'", "\'\'")
-//                            + "', unite = '" + c.Unite.Replace("\'", "\'\'")
-//                            + "'  WHERE id = " + c.Id ;
-//                    SqlCommand cmd = new SqlCommand(sql, conn);
-//                    cmd.ExecuteNonQuery();
-//                    System.out.println("Connexion OK - SQL entry modified");
-//                }
-//            }
-//
-//            public void Delete(int id)
-//            {
-//                {
-//                    using (SqlConnection conn = new SqlConnection(_connectionString))
-//                    {
-//                        conn.Open();
-//                        String sql = "DELETE FROM Capteurs WHERE id = " + id;
-//                        SqlCommand cmd = new SqlCommand(sql, conn);
-//                        cmd.ExecuteNonQuery();
-//                        System.out.println("Connexion OK - SQL entry deleted");
-//                    }
-//                }
-//            }
-//    }
