@@ -1,4 +1,5 @@
 ﻿using Microsoft.Data.SqlClient;
+using sql_backend.Util;
 using sql_backend.DAO;
 using sql_backend.Model;
 using System;
@@ -9,8 +10,9 @@ using System;
 class Program
 {
     static string connectionString = "Server=localhost,1440;Database=SupervisionDB;encrypt=false;trustServerCertificate=true;user=sa;password=gyuezo+fk5;";
+    static ConsoleHelper con = new ConsoleHelper();
     static CapteurDAO dao = new CapteurDAO(connectionString);
-    static string Menu()
+    static char Menu()
     {
         Console.WriteLine("\nChoose one option :");
         Console.WriteLine(" c = Create");
@@ -18,84 +20,75 @@ class Program
         Console.WriteLine(" u = Update");
         Console.WriteLine(" d = Delete");
         Console.WriteLine("\n q = Quit");
-        return Console.ReadLine();
+        return con.LireChoix('C', 'R', 'U', 'D', 'Q');
+//        return Console.ReadLine();
     }
     static void Create()
     {
         Capteur cap = new Capteur();
         cap.Id = 0;
-        Console.WriteLine("Enter name:");
-        cap.Nom = Console.ReadLine();
-        Console.WriteLine("Enter type:");
-        cap.Type = Console.ReadLine();
-        Console.WriteLine("Enter unit:");
-        cap.Unite = Console.ReadLine();
+        cap.Nom = con.LireChaine("Enter name:");
+        cap.Type = con.LireChaine("Enter type:");
+        cap.Unite = con.LireChaine("Enter unit:");
         dao.Insert(cap);
     }
     static public void Change()
     {
-        Console.WriteLine("Which Id should be modified?");
-        int MonId = Convert.ToInt32(Console.ReadLine());
+        int MonId = con.LireEntier("Which Id should be modified?");
         Console.WriteLine("Searched index:" + MonId);
         Capteur cap = dao.findById(MonId);
         cap.display();
-
-        Console.WriteLine("Enter name (hit enter to keep existing):");
-        string s = Console.ReadLine();
+        string s = con.LireChaineOptionnelle("Enter name (hit enter to keep existing):");
         if (s != "") cap.Nom = s;
-        Console.WriteLine("Enter type (hit enter to keep existing):");
-        s = Console.ReadLine();
+        s = con.LireChaineOptionnelle("Enter type (hit enter to keep existing):");
         if (s != "") cap.Type = s;
-        Console.WriteLine("Enter unit (hit enter to keep existing):");
+        s = con.LireChaineOptionnelle("Enter unit (hit enter to keep existing):");
         s = Console.ReadLine();
         if (s != "") cap.Unite = s;
-
         cap.display();
         dao.Update(cap);
     }
     static void Eliminate()
     {
-        Console.WriteLine("Which Id should be deleted?");
-        int MonId = Convert.ToInt32(Console.ReadLine());
+        int MonId = con.LireEntier("Which Id should be deleted?");
         Console.WriteLine("Searched index:" + MonId);
         Capteur cap = dao.findById(MonId);
         cap.display();
 
-        Console.WriteLine("Confirm deletion (y/n):");
-        string s = Console.ReadLine();
-        if (s == "y") dao.Delete(MonId);
+        Boolean b = con.LireBoolean("Confirm deletion (y/n):");
+        if (b) dao.Delete(MonId);
     }
     static void Main()
     {
         Console.WriteLine("*** SQL backend test ***");
 
-        string choix;
+        char choix;
 
         do
         {
             choix = Menu();
             switch (choix)
             {
-                case "c":
+                case 'C':
                     Create();
                     break;
-                case "r":
+                case 'R':
                     var liste = dao.FindAll();
                     foreach (Capteur cap in liste) cap.display();
                     break;
-                case "u":
+                case 'U':
                     Change();
                     break;
-                case "d":
+                case 'D':
                     Eliminate();
                     break;
-                case "q":
+                case 'Q':
                     Console.WriteLine("End of program");
                     break;
                 default:
                     Console.WriteLine("Invalid choice");
                     break;
             }
-        } while (choix != "q");
+        } while (choix != 'Q');
     }
 }
